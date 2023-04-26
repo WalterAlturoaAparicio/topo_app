@@ -292,7 +292,7 @@ class _PlayGroundPageState extends State<PlayGroundPage> {
                   Text(
                     vector.nombre,
                     textAlign: TextAlign.center,
-                    // style: const TextStyle(fontSize: 18),
+                    style: const TextStyle(fontSize: 11),
                   )
                 ],
               ),
