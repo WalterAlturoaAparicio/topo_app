@@ -265,26 +265,6 @@ class _NewFormPageState extends State<NewFormPage> {
               borderRadius: 10,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: FormHelper.inputFieldWidget(
-              context,
-              "poliJudicial",
-              "Policía Judicial",
-              (onValidateVal) {},
-              (onSavedVal) {
-                poliJudicial = onSavedVal;
-              },
-              prefixIcon: const Icon(Icons.person_pin_circle),
-              showPrefixIcon: true,
-              borderFocusColor: Colors.white,
-              prefixIconColor: Colors.white,
-              textColor: Colors.white,
-              borderColor: Colors.white,
-              hintColor: Colors.white.withOpacity(0.7),
-              borderRadius: 10,
-            ),
-          ),
           const SizedBox(
             height: 20,
           ),
@@ -323,24 +303,52 @@ class _NewFormPageState extends State<NewFormPage> {
 
     page.graphics.drawImage(
         PdfBitmap(await _readImageData("formato_en_blanco.png")),
-        const Rect.fromLTWH(-90, 0, 690, 830));
+        const Rect.fromLTWH(-10, 0, 600, 830));
     page.graphics.rotateTransform(45);
     page.graphics.translateTransform(320, -100);
     page.graphics.drawImage(PdfBitmap(await _readImageData("carro.png")),
         const Rect.fromLTWH(0, 0, 70, 152));
-    
+
+    state = restoreGraphics(state, page);
+
+    page.graphics.rotateTransform(90);
+    page.graphics.translateTransform(650, -450);
+    page.graphics.drawImage(PdfBitmap(await _readImageData("Brujula.png")),
+        const Rect.fromLTWH(0, 0, 100, 100));
+
+    state = restoreGraphics(state, page);
+
+    page.graphics.translateTransform(155, 255);
+    page.graphics.drawImage(
+        PdfBitmap(await _readImageData("linea_punteada.png")),
+        const Rect.fromLTWH(0, 0, 91, 100));
+
+    state = restoreGraphics(state, page);
+
+    page.graphics.translateTransform(235, 255);
+    page.graphics.rotateTransform(45);
+    page.graphics.drawImage(
+        PdfBitmap(await _readImageData("linea_punteada.png")),
+        const Rect.fromLTWH(0, 0, 91, 100));
+
+    state = restoreGraphics(state, page);
+
+    page.graphics.translateTransform(150, 350);
+    page.graphics.drawImage(PdfBitmap(await _readImageData("chico.png")),
+        const Rect.fromLTWH(0, 0, 100, 59));
+
     state = restoreGraphics(state, page);
 
     if (departamento != null) {
       drawSomething(page, 90, 180, -472, departamento!);
       state = restoreGraphics(state, page);
-      drawSomething(page, 90, 355, -555, "1      1");
+      drawSomething(page, 90, 370, -555, "1      1");
     }
     if (municipio != null) {
       state = restoreGraphics(state, page);
-      drawSomething(page, 90, 375, -472, municipio!);
+      drawSomething(page, 90, 390, -472, municipio!);
       state = restoreGraphics(state, page);
-      drawSomething(page, 90, 397, -555, "0     0    1");
+      drawSomething(page, 90, 415, -555, "0     0    1");
     }
 
     if (entidad != null) {
@@ -385,7 +393,15 @@ class _NewFormPageState extends State<NewFormPage> {
       buffer.writeAll(str, "      ");
       drawSomething(page, 90, 710, -472, buffer.toString());
     }
+    if (solicitante != null) {
+      state = restoreGraphics(state, page);
+      drawSomething(page, 90, 330, -85, solicitante!);
+    }
 
+    if (identificacion != null) {
+      state = restoreGraphics(state, page);
+      drawSomething(page, 90, 560, -45, identificacion!);
+    }
     page.graphics.restore(state);
 
     List<int> bytes = await document.save();

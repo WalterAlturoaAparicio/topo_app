@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snippet_coder_utils/hex_color.dart';
+import 'package:topo_app/models/calculator_model.dart';
 
 class CalculatorPage extends StatefulWidget {
   const CalculatorPage({Key? key}) : super(key: key);
@@ -11,6 +12,15 @@ class CalculatorPage extends StatefulWidget {
 class _CalculatorPageState extends State<CalculatorPage> {
   String mainColor = "#14173b";
   String contrastColor = "#0b0d24";
+  List rutas = [
+    CalculatorDirection("Rectangulares a polares", "two_points"),
+    CalculatorDirection("Formula de heron", "heron"),
+    CalculatorDirection("Distancia inclinada", "slope_distance"),
+    CalculatorDirection("Distancia horizontal", "horizontal_distance"),
+    CalculatorDirection("Distancia vertical", "vertical_distance"),
+    CalculatorDirection("Angulo de inclinación", "slope_angle"),
+    CalculatorDirection("Pendiente de una recta", "slope_line"),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +47,14 @@ class _CalculatorPageState extends State<CalculatorPage> {
           ),
         ),
         Padding(
-            padding: const EdgeInsets.only(left:40.0,right:40.0, bottom: 20.0),
+            padding:
+                const EdgeInsets.only(left: 40.0, right: 40.0, bottom: 20.0),
             child: GridView.count(
               crossAxisCount: 1,
-              childAspectRatio: 5,
+              childAspectRatio: 4,
               children: <Widget>[
-                _buttonCalculated("Distancia entre dos puntos", "two_points"),
-                _buttonCalculated("Distancia entre dos puntos", "two_points"),
-                _buttonCalculated("Distancia entre dos puntos", "two_points"),
+                for (var ruta in rutas)
+                  _buttonCalculated(ruta.nombre, ruta.direction),
               ],
             )),
       ]),

@@ -34,9 +34,19 @@ class _MyHomePageState extends State<MyHomePage> {
             alignment: Alignment.bottomLeft,
           ),
         ),
-        _swiper(),
+
+        Positioned.fill(
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: Image.asset(
+              "assets/images/banner1.png",
+              height: 300,
+            ),
+          ),
+        ),
+        // _swiper(),
         Padding(
-          padding: const EdgeInsets.only(top: 310.0, left: 40, right: 40),
+          padding: const EdgeInsets.only(top: 310.0, left: 20, right: 20),
           child: GridView.count(
             crossAxisCount: 2,
             childAspectRatio: 5 / 3,
@@ -76,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Swiper(
           itemBuilder: (BuildContext context, int index) {
             return Image.asset(
-              "assets/images/"+images[index],
+              "assets/images/" + images[index],
               fit: BoxFit.fitHeight,
             );
           },
