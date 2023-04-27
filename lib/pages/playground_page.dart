@@ -18,12 +18,6 @@ class _PlayGroundPageState extends State<PlayGroundPage> {
   String? filter;
 
   final List<Widget> _addedWidgets = [];
-  // final vectores = [
-  //   Vector(1, "chico", "CHICO.png", 100, 59),
-  //   Vector(2, "carro", "CARRO.png", 102, 221),
-
-  //   Vector(4, "linea punteada", "linea_punteada.png", 100, 91),
-  // ];
 
   bool _isDeleteButtonActive = false;
   bool _showDeleteButton = false;
