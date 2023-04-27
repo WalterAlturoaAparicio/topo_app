@@ -395,6 +395,7 @@ final carpetas = [
     "data": <Vector>[
       Vector(116, "Brujula", "BRUJULA.png", 100, 101),
       Vector(117, "Linea punteada", "LINEA_PUNTEADA.png", 100, 92),
+      Vector(129, "Pared", "PARED.png", 38, 302)
     ],
   }
 ];
