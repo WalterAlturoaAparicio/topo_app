@@ -8,7 +8,6 @@ import 'package:topo_app/pages/calculator_pages/slope_line.dart';
 import 'package:topo_app/pages/calculator_pages/vertical_distance.dart';
 import 'package:topo_app/pages/edit_page.dart';
 import 'package:topo_app/pages/home_page.dart';
-import 'package:topo_app/pages/manual.dart';
 import 'package:topo_app/pages/playground_page.dart';
 import 'package:topo_app/pages/recent_page.dart';
 import 'package:topo_app/pages/calculator_pages/two_points.dart';

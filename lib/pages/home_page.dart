@@ -3,7 +3,6 @@ import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:snippet_coder_utils/hex_color.dart';
 import 'package:topo_app/components/main_botton.dart';
 import 'package:topo_app/pages/manual.dart';
-// import 'package:flutter_swiper/flutter_swiper.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -14,7 +13,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String mainColor = "#14173b";
-  List<String> images = ["banner1.png", "banner2.png"];
+  List<String> images = [
+    "banner1.png",
+    "banner2.png",
+    "banner3.png",
+    "banner4.png",
+    "banner5.png",
+    "banner6.png"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -51,16 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
 
-        Positioned.fill(
-          child: Align(
-            alignment: Alignment.topCenter,
-            child: Image.asset(
-              "assets/images/banner1.png",
-              height: 300,
-            ),
-          ),
-        ),
-        // _swiper(),
+        // Positioned.fill(
+        //   child: Align(
+        //     alignment: Alignment.topCenter,
+        //     child: Image.asset(
+        //       "assets/images/banner1.png",
+        //       height: 300,
+        //     ),
+        //   ),
+        // ),
+        _swiper(),
         Padding(
           padding: const EdgeInsets.only(top: 310.0, left: 20, right: 20),
           child: GridView.count(
@@ -106,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
               fit: BoxFit.fitHeight,
             );
           },
-          itemCount: 2,
+          itemCount: 6,
           pagination: const SwiperPagination(),
           control: const SwiperControl()),
     );
