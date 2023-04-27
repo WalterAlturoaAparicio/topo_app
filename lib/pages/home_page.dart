@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:snippet_coder_utils/hex_color.dart';
 import 'package:topo_app/components/main_botton.dart';
+import 'package:topo_app/pages/manual.dart';
 // import 'package:flutter_swiper/flutter_swiper.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -19,13 +20,28 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text("Topo App"),
-          backgroundColor: HexColor("#0b0d24"),
-          leading: Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Image.asset(
-                "assets/images/logoTopoApp.jpg",
-              ))),
+        title: const Text("Topo App"),
+        backgroundColor: HexColor("#0b0d24"),
+        leading: Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Image.asset(
+              "assets/images/logoTopoApp.jpg",
+            )),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            iconSize: 30.0,
+            color: Colors.white,
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ManualPage(),
+                  ));
+            },
+          ),
+        ],
+      ),
       body: Stack(children: <Widget>[
         Positioned.fill(
           child: Image.asset(

@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
   snippet_coder_utils: ^1.0.9
   syncfusion_flutter_pdf: ^20.3.50
+  syncfusion_flutter_pdfviewer: ^20.4.53
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -65,6 +66,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/
     - assets/images/
     - assets/images/BLOQUES/
     - assets/images/BLOQUES/BANIO/
