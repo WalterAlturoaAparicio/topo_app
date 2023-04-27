@@ -112,8 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
               fit: BoxFit.fitHeight,
             );
           },
-          itemCount: 6,
-          pagination: const SwiperPagination(),
+          itemCount: images.length,
           control: const SwiperControl()),
     );
   }
