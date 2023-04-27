@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+import 'package:date_field/date_field.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:snippet_coder_utils/hex_color.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 import 'package:topo_app/models/convetion.dart';
 import 'package:topo_app/pages/mobile.dart';
+import "package:intl/intl.dart";
 
 class NewFormPage extends StatefulWidget {
   const NewFormPage({Key? key}) : super(key: key);
@@ -28,10 +30,16 @@ class _NewFormPageState extends State<NewFormPage> {
   String? consecutivo;
   String? anio;
   String? unidadReceptora;
-  String? solicitante;
   String? fecha;
   String? hora;
+  String? solicitante;
   String? identificacion;
+  String? lugar;
+  String? correo;
+  String? telefono;
+
+  //date time
+  final format = DateFormat("yyyy-MM-dd HH:mm");
 
   //tabla convenciones
   final List<Widget> _addedColumns = [];
@@ -183,76 +191,49 @@ class _NewFormPageState extends State<NewFormPage> {
                 borderRadius: 10,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Text(
-                "Fecha",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
+            Padding(
+                padding: const EdgeInsets.all(20),
+                child: DateTimeFormField(
+                  dateFormat: format,
+                  decoration: InputDecoration(
+                      prefixIcon: Container(
+                        margin: const EdgeInsets.only(right: 10),
+                        child: const Padding(
+                          padding: EdgeInsets.only(
+                            left: 30.0,
+                          ),
+                          child: Icon(
+                            Icons.today,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      focusColor: Colors.white,
+                      hintText: "   Fecha y hora",
+                      iconColor: Colors.white,
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                            const BorderSide(color: Colors.white, width: 1.0),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      hintStyle: const TextStyle(
+                          color: Color.fromRGBO(189, 189, 189, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15)),
+                  dateTextStyle: const TextStyle(
                     color: Colors.white,
-                    fontSize: 18),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: FormHelper.inputFieldWidget(
-                context,
-                "fecha",
-                "Fecha",
-                (onValidateVal) {},
-                (onSavedVal) {
-                  fecha = onSavedVal;
-                },
-                prefixIcon: const Icon(Icons.today),
-                showPrefixIcon: true,
-                borderFocusColor: Colors.white,
-                prefixIconColor: Colors.white,
-                textColor: Colors.white,
-                borderColor: Colors.white,
-                hintColor: Colors.white.withOpacity(0.7),
-                borderRadius: 10,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: FormHelper.inputFieldWidget(
-                context,
-                "anio",
-                "Año",
-                (onValidateVal) {},
-                (onSavedVal) {
-                  anio = onSavedVal;
-                },
-                prefixIcon: const Icon(Icons.today),
-                showPrefixIcon: true,
-                borderFocusColor: Colors.white,
-                prefixIconColor: Colors.white,
-                textColor: Colors.white,
-                borderColor: Colors.white,
-                hintColor: Colors.white.withOpacity(0.7),
-                borderRadius: 10,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: FormHelper.inputFieldWidget(
-                context,
-                "hora",
-                "Hora",
-                (onValidateVal) {},
-                (onSavedVal) {
-                  hora = onSavedVal;
-                },
-                prefixIcon: const Icon(Icons.timer_sharp),
-                showPrefixIcon: true,
-                borderFocusColor: Colors.white,
-                prefixIconColor: Colors.white,
-                textColor: Colors.white,
-                borderColor: Colors.white,
-                hintColor: Colors.white.withOpacity(0.7),
-                borderRadius: 10,
-              ),
-            ),
+                    fontSize: 18,
+                  ),
+                  onSaved: (onSavedVal) {
+                    if (onSavedVal != null) {
+                      anio = onSavedVal.year.toString();
+
+                      List<String> str = onSavedVal.toString().split(" ");
+                      fecha = str[0];
+                      hora = str[1];
+                    }
+                  },
+                )),
             const Padding(
               padding: EdgeInsets.all(15.0),
               child: Text(
@@ -304,17 +285,77 @@ class _NewFormPageState extends State<NewFormPage> {
               ),
             ),
             Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: FormHelper.inputFieldWidget(
+                context,
+                "lugar",
+                "Lugar de diligencia",
+                (onValidateVal) {},
+                (onSavedVal) {
+                  lugar = onSavedVal;
+                },
+                prefixIcon: const Icon(Icons.maps_home_work),
+                showPrefixIcon: true,
+                borderFocusColor: Colors.white,
+                prefixIconColor: Colors.white,
+                textColor: Colors.white,
+                borderColor: Colors.white,
+                hintColor: Colors.white.withOpacity(0.7),
+                borderRadius: 10,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: FormHelper.inputFieldWidget(
+                context,
+                "correo",
+                "Correo electrónico",
+                (onValidateVal) {},
+                (onSavedVal) {
+                  correo = onSavedVal;
+                },
+                prefixIcon: const Icon(Icons.mail_outline_outlined),
+                showPrefixIcon: true,
+                borderFocusColor: Colors.white,
+                prefixIconColor: Colors.white,
+                textColor: Colors.white,
+                borderColor: Colors.white,
+                hintColor: Colors.white.withOpacity(0.7),
+                borderRadius: 10,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: FormHelper.inputFieldWidget(
+                context,
+                "telefono",
+                "Teléfono",
+                (onValidateVal) {},
+                (onSavedVal) {
+                  telefono = onSavedVal;
+                },
+                prefixIcon: const Icon(Icons.phone),
+                showPrefixIcon: true,
+                borderFocusColor: Colors.white,
+                prefixIconColor: Colors.white,
+                textColor: Colors.white,
+                borderColor: Colors.white,
+                hintColor: Colors.white.withOpacity(0.7),
+                borderRadius: 10,
+              ),
+            ),
+            Padding(
               padding: const EdgeInsets.all(15.0),
               child: Text.rich(TextSpan(children: [
                 TextSpan(
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
                         refresh(() {
-                          final element = "element" +
-                              (_addedColumns.length + 1).toString();
+                          final element =
+                              "element" + (_addedColumns.length + 1).toString();
 
-                          final convention = Convention(
-                              element, element + "a", element + "b");
+                          final convention =
+                              Convention(element, element + "a", element + "b");
 
                           _addedConventions.add(convention);
                           _addedColumns.add(buildColumnElement(convention));
@@ -335,8 +376,7 @@ class _NewFormPageState extends State<NewFormPage> {
                 )
               ])),
             ),
-            for (var i = 0; i < _addedColumns.length; i++)
-              _addedColumns[i],
+            for (var i = 0; i < _addedColumns.length; i++) _addedColumns[i],
             const SizedBox(
               height: 20,
             ),
@@ -393,13 +433,13 @@ class _NewFormPageState extends State<NewFormPage> {
 
     state = restoreGraphics(state, page);
     if (departamento != null) {
-      drawSomething(page, 90, 100, -482, departamento!);
+      drawSomething(page, 90, 100, -482, departamento!, false);
       state = restoreGraphics(state, page);
       // drawSomething(page, 90, 370, -555, "1      1");
     }
     if (municipio != null) {
       state = restoreGraphics(state, page);
-      drawSomething(page, 90, 300, -482, municipio!);
+      drawSomething(page, 90, 300, -482, municipio!, false);
       state = restoreGraphics(state, page);
       // drawSomething(page, 90, 415, -555, "0     0    1");
     }
@@ -409,7 +449,7 @@ class _NewFormPageState extends State<NewFormPage> {
       List<String> str = entidad!.split("");
       final buffer = StringBuffer("");
       buffer.writeAll(str, "     ");
-      drawSomething(page, 90, 480, -555, buffer.toString());
+      drawSomething(page, 90, 480, -555, buffer.toString(), false);
     }
 
     if (unidadReceptora != null) {
@@ -417,43 +457,60 @@ class _NewFormPageState extends State<NewFormPage> {
       List<String> str = unidadReceptora!.split("");
       final buffer = StringBuffer("");
       buffer.writeAll(str, "    ");
-      drawSomething(page, 90, 524, -555, buffer.toString());
+      drawSomething(page, 90, 524, -555, buffer.toString(), false);
     }
     if (anio != null) {
       state = restoreGraphics(state, page);
       List<String> str = anio!.split("");
       final buffer = StringBuffer("");
       buffer.writeAll(str, "    ");
-      drawSomething(page, 90, 630, -555, buffer.toString());
+      drawSomething(page, 90, 630, -555, buffer.toString(), false);
     }
     if (consecutivo != null) {
       state = restoreGraphics(state, page);
       List<String> str = consecutivo!.split("");
       final buffer = StringBuffer("");
       buffer.writeAll(str, "    ");
-      drawSomething(page, 90, 715, -555, buffer.toString());
+      drawSomething(page, 90, 715, -555, buffer.toString(), false);
     }
 
     if (fecha != null) {
       state = restoreGraphics(state, page);
-      drawSomething(page, 90, 555, -482, fecha!);
+      List<String> str = fecha!.split("-");
+      final buffer = StringBuffer("");
+      buffer.writeAll(str, "             ");
+      drawSomething(page, 90, 530, -482, buffer.toString(), true);
     }
 
     if (hora != null) {
       state = restoreGraphics(state, page);
-      List<String> str = hora!.split("");
+      List<String> str = hora!.split(":");
+      str.removeLast();
+      List<String> str1 = str.join("").split("");
       final buffer = StringBuffer("");
-      buffer.writeAll(str, "      ");
-      drawSomething(page, 90, 710, -482, buffer.toString());
+      buffer.writeAll(str1, "     ");
+      drawSomething(page, 90, 732, -482, buffer.toString(), false);
     }
     if (solicitante != null) {
       state = restoreGraphics(state, page);
-      drawSomething(page, 90, 330, -85, solicitante!);
+      drawSomething(page, 90, 375, -87, solicitante!, false);
     }
 
     if (identificacion != null) {
       state = restoreGraphics(state, page);
-      drawSomething(page, 90, 560, -45, identificacion!);
+      drawSomething(page, 90, 675, -87, identificacion!, false);
+    }
+    if (lugar != null) {
+      state = restoreGraphics(state, page);
+      drawSomething(page, 90, 115, -87, lugar!, false);
+    }
+    if (correo != null) {
+      state = restoreGraphics(state, page);
+      drawSomething(page, 90, 375, -69, correo!, false);
+    }
+    if (telefono != null) {
+      state = restoreGraphics(state, page);
+      drawSomething(page, 90, 65, -69, telefono!, false);
     }
     page.graphics.restore(state);
 
@@ -504,12 +561,19 @@ class _NewFormPageState extends State<NewFormPage> {
     return page.graphics.save();
   }
 
-  void drawSomething(
-      PdfPage page, double angle, double x, double y, String something) {
+  void drawSomething(PdfPage page, double angle, double x, double y,
+      String something, bool? bold) {
     page.graphics.rotateTransform(angle);
     page.graphics.translateTransform(x, y);
-    page.graphics
-        .drawString(something, PdfStandardFont(PdfFontFamily.helvetica, 12));
+    if (bold == true) {
+      page.graphics.drawString(
+          something,
+          PdfStandardFont(PdfFontFamily.helvetica, 12,
+              style: PdfFontStyle.bold));
+    } else {
+      page.graphics
+          .drawString(something, PdfStandardFont(PdfFontFamily.helvetica, 12));
+    }
   }
 
   Column buildColumnElement(Convention element) {
