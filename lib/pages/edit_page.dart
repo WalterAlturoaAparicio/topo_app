@@ -24,7 +24,9 @@ class _NewFormPageState extends State<NewFormPage> {
   GlobalKey<FormState> globalFormKey = GlobalKey<FormState>();
 
   String? departamento;
+  String? numDepartamento;
   String? municipio;
+  String? numMunicipio;
   String? poliJudicial;
   String? entidad;
   String? consecutivo;
@@ -115,11 +117,51 @@ class _NewFormPageState extends State<NewFormPage> {
               padding: const EdgeInsets.only(top: 10),
               child: FormHelper.inputFieldWidget(
                 context,
+                "numDepartamento",
+                "N° Departamento",
+                (onValidateVal) {},
+                (onSavedVal) {
+                  numDepartamento = onSavedVal;
+                },
+                prefixIcon: const Icon(Icons.maps_home_work),
+                showPrefixIcon: true,
+                borderFocusColor: Colors.white,
+                prefixIconColor: Colors.white,
+                textColor: Colors.white,
+                borderColor: Colors.white,
+                hintColor: Colors.white.withOpacity(0.7),
+                borderRadius: 10,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: FormHelper.inputFieldWidget(
+                context,
                 "municipio",
                 "Municipio",
                 (onValidateVal) {},
                 (onSavedVal) {
                   municipio = onSavedVal;
+                },
+                prefixIcon: const Icon(Icons.maps_home_work),
+                showPrefixIcon: true,
+                borderFocusColor: Colors.white,
+                prefixIconColor: Colors.white,
+                textColor: Colors.white,
+                borderColor: Colors.white,
+                hintColor: Colors.white.withOpacity(0.7),
+                borderRadius: 10,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: FormHelper.inputFieldWidget(
+                context,
+                "numMunicipio",
+                "N° Municipio",
+                (onValidateVal) {},
+                (onSavedVal) {
+                  numMunicipio = onSavedVal;
                 },
                 prefixIcon: const Icon(Icons.maps_home_work),
                 showPrefixIcon: true,
@@ -432,18 +474,29 @@ class _NewFormPageState extends State<NewFormPage> {
         const Rect.fromLTWH(0, 0, 80, 80));
 
     state = restoreGraphics(state, page);
+
     if (departamento != null) {
-      drawSomething(page, 90, 100, -482, departamento!, false);
       state = restoreGraphics(state, page);
-      // drawSomething(page, 90, 370, -555, "1      1");
+      drawSomething(page, 90, 100, -482, departamento!, false);
+    }
+    if (numDepartamento != null) {
+      state = restoreGraphics(state, page);
+      List<String> str = numDepartamento!.split("");
+      final buffer = StringBuffer("");
+      buffer.writeAll(str, "     ");
+      drawSomething(page, 90, 370, -555, buffer.toString(), false);
     }
     if (municipio != null) {
       state = restoreGraphics(state, page);
       drawSomething(page, 90, 300, -482, municipio!, false);
-      state = restoreGraphics(state, page);
-      // drawSomething(page, 90, 415, -555, "0     0    1");
     }
-
+    if (numMunicipio != null) {
+      state = restoreGraphics(state, page);
+      List<String> str = numMunicipio!.split("");
+      final buffer = StringBuffer("");
+      buffer.writeAll(str, "     ");
+      drawSomething(page, 90, 415, -555, buffer.toString(), false);
+    }
     if (entidad != null) {
       state = restoreGraphics(state, page);
       List<String> str = entidad!.split("");

@@ -62,7 +62,7 @@ class _TwoPointsPageState extends State<TwoPointsPage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("X Inicial", style: TextStyle(fontSize: 18)),
+                      child: Text("X Inicial", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -74,7 +74,7 @@ class _TwoPointsPageState extends State<TwoPointsPage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Y Inicial", style: TextStyle(fontSize: 18)),
+                      child: Text("Y Inicial", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -86,7 +86,7 @@ class _TwoPointsPageState extends State<TwoPointsPage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("X Final", style: TextStyle(fontSize: 18)),
+                      child: Text("X Final", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -98,7 +98,7 @@ class _TwoPointsPageState extends State<TwoPointsPage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Y Final", style: TextStyle(fontSize: 18)),
+                      child: Text("Y Final", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -110,7 +110,7 @@ class _TwoPointsPageState extends State<TwoPointsPage> {
                     const Padding(
                       padding: EdgeInsets.only(top: 30.0, left: 35.0),
                       child: Text("Distancia total",
-                          style: TextStyle(fontSize: 18)),
+                          style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, top: 20),
@@ -122,7 +122,7 @@ class _TwoPointsPageState extends State<TwoPointsPage> {
                     const Padding(
                       padding: EdgeInsets.only(top: 30.0, left: 35.0),
                       child: Text("Acimut central",
-                          style: TextStyle(fontSize: 18)),
+                          style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, top: 20),

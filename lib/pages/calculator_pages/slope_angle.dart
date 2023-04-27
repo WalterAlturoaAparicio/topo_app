@@ -59,7 +59,7 @@ class _SlopeAnglePageState extends State<SlopeAnglePage> {
                       padding:
                           EdgeInsets.only(top: 10.0, left: 15.0, bottom: 10),
                       child: Text("Distancia Nivel",
-                          style: TextStyle(fontSize: 18)),
+                          style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -72,7 +72,7 @@ class _SlopeAnglePageState extends State<SlopeAnglePage> {
                       padding:
                           EdgeInsets.only(top: 10.0, left: 15.0, bottom: 10),
                       child: Text("Distancia horizontal",
-                          style: TextStyle(fontSize: 18)),
+                          style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -84,7 +84,7 @@ class _SlopeAnglePageState extends State<SlopeAnglePage> {
                     const Padding(
                       padding: EdgeInsets.only(top: 30.0, left: 35.0),
                       child: Text("Distancia vertical",
-                          style: TextStyle(fontSize: 18)),
+                          style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, top: 20),

@@ -60,7 +60,7 @@ class _HeronPageState extends State<HeronPage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Lado A", style: TextStyle(fontSize: 18)),
+                      child: Text("Lado A", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -72,7 +72,7 @@ class _HeronPageState extends State<HeronPage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Lado B", style: TextStyle(fontSize: 18)),
+                      child: Text("Lado B", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -84,7 +84,7 @@ class _HeronPageState extends State<HeronPage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Lado C", style: TextStyle(fontSize: 18)),
+                      child: Text("Lado C", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -95,7 +95,7 @@ class _HeronPageState extends State<HeronPage> {
                     ),
                     const Padding(
                       padding: EdgeInsets.only(top: 30.0, left: 35.0),
-                      child: Text("Área", style: TextStyle(fontSize: 18)),
+                      child: Text("Área", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, top: 20),

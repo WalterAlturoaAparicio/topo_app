@@ -59,7 +59,7 @@ class _SlopeLinePageState extends State<SlopeLinePage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("X Inicial", style: TextStyle(fontSize: 18)),
+                      child: Text("X Inicial", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -71,7 +71,7 @@ class _SlopeLinePageState extends State<SlopeLinePage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Y Inicial", style: TextStyle(fontSize: 18)),
+                      child: Text("Y Inicial", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -83,7 +83,7 @@ class _SlopeLinePageState extends State<SlopeLinePage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("X Final", style: TextStyle(fontSize: 18)),
+                      child: Text("X Final", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -95,7 +95,7 @@ class _SlopeLinePageState extends State<SlopeLinePage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Y Final", style: TextStyle(fontSize: 18)),
+                      child: Text("Y Final", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -106,7 +106,7 @@ class _SlopeLinePageState extends State<SlopeLinePage> {
                     ),
                     const Padding(
                       padding: EdgeInsets.only(top: 30.0, left: 35.0),
-                      child: Text("Pendiente", style: TextStyle(fontSize: 18)),
+                      child: Text("Pendiente", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, top: 20),

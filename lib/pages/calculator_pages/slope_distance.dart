@@ -63,7 +63,7 @@ class _SlopeDistancePageState extends State<SlopeDistancePage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Norte 1", style: TextStyle(fontSize: 18)),
+                      child: Text("Norte 1", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -75,7 +75,7 @@ class _SlopeDistancePageState extends State<SlopeDistancePage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Norte 2", style: TextStyle(fontSize: 18)),
+                      child: Text("Norte 2", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -87,7 +87,7 @@ class _SlopeDistancePageState extends State<SlopeDistancePage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Este 1", style: TextStyle(fontSize: 18)),
+                      child: Text("Este 1", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -99,7 +99,7 @@ class _SlopeDistancePageState extends State<SlopeDistancePage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Este 2", style: TextStyle(fontSize: 18)),
+                      child: Text("Este 2", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -111,7 +111,7 @@ class _SlopeDistancePageState extends State<SlopeDistancePage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Zeta 1", style: TextStyle(fontSize: 18)),
+                      child: Text("Zeta 1", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -123,7 +123,7 @@ class _SlopeDistancePageState extends State<SlopeDistancePage> {
                     const Padding(
                       padding:
                           EdgeInsets.only(top: 10.0, left: 45.0, bottom: 10),
-                      child: Text("Zeta 2", style: TextStyle(fontSize: 18)),
+                      child: Text("Zeta 2", style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, bottom: 10),
@@ -135,7 +135,7 @@ class _SlopeDistancePageState extends State<SlopeDistancePage> {
                     const Padding(
                       padding: EdgeInsets.only(top: 30.0, left: 35.0),
                       child: Text("Distancia inclinada",
-                          style: TextStyle(fontSize: 18)),
+                          style: TextStyle(fontSize: 15)),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20.0, top: 20),
