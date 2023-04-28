@@ -463,8 +463,8 @@ class _NewFormPageState extends State<NewFormPage> {
 
     page.graphics.rotateTransform(90);
     page.graphics.translateTransform(50, -450);
-    page.graphics.drawImage(PdfBitmap(await _readImageData("ejemplo.png")),
-        const Rect.fromLTWH(0, 0, 500, 330));
+    page.graphics.drawImage(PdfBitmap(await _readImageData("ejemplo1.png")),
+        const Rect.fromLTWH(0, 0, 500, 303));
 
     state = restoreGraphics(state, page);
     page.graphics.rotateTransform(90);
