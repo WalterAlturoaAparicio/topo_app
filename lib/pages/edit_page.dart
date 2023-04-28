@@ -577,8 +577,8 @@ class _NewFormPageState extends State<NewFormPage> {
     grid.columns.add(count: 3);
     final PdfGridRow headerRow = grid.headers.add(1)[0];
     headerRow.cells[0].value = 'Elemento';
-    headerRow.cells[1].value = 'A';
-    headerRow.cells[2].value = 'B';
+    headerRow.cells[1].value = 'X';
+    headerRow.cells[2].value = 'Y';
 
     headerRow.style.font =
         PdfStandardFont(PdfFontFamily.helvetica, 12, style: PdfFontStyle.bold);
@@ -658,7 +658,7 @@ class _NewFormPageState extends State<NewFormPage> {
           child: FormHelper.inputFieldWidget(
             context,
             element.a,
-            "Posicion A elemento " + (_addedColumns.length + 1).toString(),
+            "Posicion X elemento " + (_addedColumns.length + 1).toString(),
             (onValidateVal) {},
             (onSavedVal) {
               element.a = onSavedVal;
@@ -678,7 +678,7 @@ class _NewFormPageState extends State<NewFormPage> {
           child: FormHelper.inputFieldWidget(
             context,
             element.b,
-            "Posicion B elemento " + (_addedColumns.length + 1).toString(),
+            "Posicion Y elemento " + (_addedColumns.length + 1).toString(),
             (onValidateVal) {},
             (onSavedVal) {
               element.b = onSavedVal;
